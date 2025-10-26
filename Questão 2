@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      width: 300px;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    button {
+      display: block;
+      width: 50%;
+      margin: 0 auto 15px;
+      padding: 10px;
+      background-color: blue;
+      color: white;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Calculadora de Somas</h1>
+
+    <label for="numero1">Primeiro Número:</label>
+    <input type="number" id="numero1">
+
+    <label for="numero2">Segundo Número:</label>
+    <input type="number" id="numero2">
+
+    <button type="button" onclick="soma()">Somar</button>
+
+    <p id="result">Resultado:</p>
+  </div>
+
+  <script>
+    function soma() {
+      const num1 = Number(document.getElementById('numero1').value) || 0;
+      const num2 = Number(document.getElementById('numero2').value) || 0; 
+      const total = num1 + num2;
+      document.getElementById('result').textContent = `Resultado: ${total}`;
+    }
+  </script>
+</body>
+</html>
