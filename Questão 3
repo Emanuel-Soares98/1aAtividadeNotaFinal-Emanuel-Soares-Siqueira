@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Mudar Cor de Fundo</title>
+  <style>
+    body {
+      background-color: lightgray;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding-top: 100px;
+      transition: background-color 0.5s ease;
+    }
 
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: color 0.5s ease;
+    }
+
+    button:hover {
+      background-color: grey;
+    }
+  </style>
+</head>
+<body>
+  <h3>Mudar cor do fundo</h3>
+  <button id="botao" onclick="mudarCor()">Mudar Cor</button>
+
+  <script>
+    const cores = ['red', 'blue', 'green', 'orange', 'purple'];
+    let indice = 0;
+
+    function mudarCor() {
+      document.body.style.backgroundColor = cores[indice];
+      document.getElementById('botao').style.color = cores[indice];
+      indice++; 
+
+      if (indice >= cores.length) {
+        indice = 0;
+      }
+    }
+  </script>
+</body>
+</html>
